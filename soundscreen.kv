@@ -1,0 +1,40 @@
+<SoundScreen>:
+	containerListView: list_id
+	corner_button: corner_button_id
+	title_button: title_button_id
+	
+	BoxLayout:
+		orientation: 'vertical'
+		canvas.before:
+			Color:
+				rgba: 1,1,1, 1
+			Rectangle:
+				source: "app-images/background.png"
+				pos: self.pos
+				size: self.size
+		ActionBar:
+			background_image: "app-images/empty-25b.png"
+			pos_hint: {'top':1}
+			ActionView:
+				use_separator: True
+				ActionPrevious:
+					title: ''
+					id: title_button_id
+					#with_previous: False
+					on_press: root.manager.go_back()
+					previous_image: "app-images/ic_action_previous_item.png"
+					app_icon: "app-images/beepbox_icon.png"
+					
+					
+				ActionOverflow:
+				
+				ActionButton:
+					id: corner_button_id
+					on_press: root.stop()
+					icon: ""
+					
+		ListView:
+			id: list_id
+				
+
+			

@@ -1,0 +1,31 @@
+<BeepBoxScreen>:
+	containerListView: list_id
+	
+	BoxLayout:
+		orientation: 'vertical'
+		canvas.before:
+			Color:
+				rgba: 1,1,1, 1
+			Rectangle:
+				source: "app-images/background.png"
+				pos: self.pos
+				size: self.size
+		ActionBar:
+			background_image: "app-images/empty-25b.png"
+			pos_hint: {'top':1}
+			ActionView:
+				use_separator: True
+				ActionPrevious:
+					title: 'Sound Box'
+					on_press: root.exit()
+					previous_image: "app-images/ic_action_previous_item.png"
+					app_icon: "app-images/beepbox_icon.png"
+					
+				
+				ActionOverflow:
+				
+					
+		ListView:
+			id: list_id
+				
+		
